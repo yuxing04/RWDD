@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoStudent Dashboard</title>
+    <link rel="stylesheet" href="student.css">
+<body>
+
+    <aside class="sidebar">
+        <div class="top-sidebar">
+            <img src="image/logo.png" alt="EcoRiseAPU Logo"/>
+            <img src="image/close.png" alt="Close Icon" onclick="toggleSidebarVisibility()" />
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="student_dashboard.html"><img src="image/home.png" alt="home"> Dashboard</a>
+            </li>
+
+            <li>
+                <a href="events.html"><img src="image/event.png" alt="calender"> Events</a>
+            </li>
+
+            <li class="active_nav">
+                <a href="my_events.html"><img src="image/timetable.png" alt="timetable">  My Events</a>
+            </li>
+
+            <li>
+                <a href="submit_proof.html"><img src="image/upload.png" alt="upload"> Submit Proof</a>
+            </li>
+
+            <li>
+                <a href="contributions.html"><img src="image/leaf.png" alt="leaf"> Contributions</a>
+            </li>
+
+            <li>
+                <a href="rewards.html"><img src="image/reward.png" alt="reward"> Rewards</a>
+            </li>
+
+            <li>
+                <a href="leaderboard.html"><img src="image/leaderboard.png" alt="leaderboard"> Leaderboard</a>
+            </li>
+
+            <li>
+                <a href="profile.html"><img src="image/user.png" alt="user"> Profile</a>
+            </li>
+        </ul>
+        <div class="signout-container">
+            <a href="#"><img src="image/sign out.png" alt="sign out" class="sign-out">Sign Out</a>
+        </div>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-header">
+            <div class="user-profile">
+                <div class="user-text">
+                    <strong>Lebron James</strong>
+                    <small>STUDENT</small>
+                </div>
+                <img src="image/user-icon.png" alt="user icon" class="user-icon">
+            </div>
+        </header>
+    <script src="script.js"></script>
+</body>
+</html>

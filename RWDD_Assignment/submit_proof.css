@@ -18,11 +18,12 @@ body {
 
 
 .container {
-    width: 550px;
+    width: 90%;
+    max-width: 700px;
+    margin: 2rem auto;
     height: 700px;
-    margin: 60px auto;
     background: #fff;
-    padding: 25px;
+    padding: clamp(15px, 3vw, 25px);
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -56,12 +57,12 @@ textarea:focus {
 .container h2 {
     color: #014d20;
     text-align: center;
-    font-size: 2vw;
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 .container label {
     color: #06963f;
-    font-size: 1.2vw;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
     margin-top: 15px;
     font-weight: bold;
 }
@@ -74,6 +75,7 @@ input, textarea {
 
 button {
     margin-top: auto;
+    margin-bottom: 12px;
     width: 100%;
     padding: 10px;
     background-color: var(--bright-green);
@@ -94,12 +96,16 @@ button:hover {
 
 .preview {
     width: 100%;
-    max-height: 200px;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;  
+    display: none;      
     margin-top: 15px;
     border: 1px solid #ddd;
-    display: none;
-    border-radius: 8px;    
+    position: absolute;
+    top: 0;
+    left: 0;
+
 }
 
 /* Hide the default file input */
@@ -123,17 +129,30 @@ button:hover {
     width: 100%;
     border: 2px dashed #667e70; 
     border-radius: 15px;
-    padding: 40px;
+    padding: 50px;
     background-color: #f9fdfb; 
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 5px;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
 }
 
 .upload-box:hover {
     background-color: #f0f9f4;
     border-color: #119c4b;
+}
+
+.upload-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.upload-box.has-image .upload-content {
+    opacity: 0;
 }
 
 /* Icon Styling */
@@ -145,7 +164,7 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 0 15px 0;
+    margin: 0 auto 0 auto;
 }
 
 .upload-box strong {
@@ -163,6 +182,17 @@ button:hover {
 .icon-circle img {
     display: block;
     margin: auto;
+}
+
+
+@media (max-width: 400px) {
+    .upload-box strong{
+        font-size: .9rem;
+    }
+
+    .upload-box span{
+        font-size: .7rem;
+    }
 }
 
 

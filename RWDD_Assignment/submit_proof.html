@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoStudent Dashboard</title>
+    <title>EcoStudent Submit Proof</title>
     <link rel="stylesheet" href="student.css">
     <link rel="stylesheet" href="submit_proof.css">
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+<body>
+    <img src="image/close.png" alt="Close Icon" class="close-sidebar-btn" onclick="toggleSidebarVisibility()">
     <aside class="sidebar">
         <div class="top-sidebar">
             <img src="image/logo.png" alt="EcoRiseAPU Logo"/>
-            <img src="image/close.png" alt="Close Icon" onclick="toggleSidebarVisibility()" />
         </div>
         <ul class="nav-links">
             <li>
@@ -54,12 +55,18 @@
 
     <div class="main-wrapper">
         <header class="top-header">
+            <div class="hamburger-menu" onclick="toggleSidebarVisibility()">
+                <img src="image/hamburger-menu.png" alt="Hamburger Menu">
+            </div>
+            <div class="logo-icon">
+                <img src="image/logo-black.png" alt="EcoRiseAPU Logo">
+            </div>            
             <div class="user-profile">
                 <div class="user-text">
                     <strong>Lebron James</strong>
                     <small>STUDENT</small>
                 </div>
-                <img src="image/user-icon.png" alt="user icon" class="user-icon">
+                <a href="profile.html"><img src="image/user-icon.png" alt="user icon" class="user-icon"></a>   
             </div>
         </header>
 
@@ -68,7 +75,7 @@
 
         <form id="proofForm">
             <label>Title</label>
-            <input type="text" id="purpose" placeholder="e.g. Tree Planting Event" required>
+            <p><strong>Tree Planting Event</strong></p>
 
             <label>Description</label>
             <textarea id="description" rows="5" placeholder="Explain what this proof is about" required></textarea>
@@ -76,16 +83,22 @@
             <label>Proof Attachment (Photo)</label>
             <div class="upload-container">
                 <input type="file" id="photo" accept="image/*" required>
-                <label for="photo" class="upload-box">
-                    <div class="icon-circle">
-                        <img src="image/image.png" alt="icon" width="30">
+
+                <label for="photo" class="upload-box" id="uploadBox">
+                    <div class="upload-content" id="uploadContent">
+                        <div class="icon-circle">
+                            <img src="image/image.png" alt="icon" width="30">
+                        </div>
+                        <strong>Click to upload photo</strong>
+                        <span>JPEG, PNG or GIF up to 10MB</span>                      
                     </div>
-                    <strong>Click to upload photo</strong>
-                    <span>JPEG, PNG or GIF up to 10MB</span>
+
+                    <img id="preview" class="preview" alt="Image Preview">  
+
                 </label>
             </div>
 
-            <img id="preview" class="preview" alt="Image Preview">
+
             
             <button type="submit" id="submit">Submit Proof</button>
         </form>

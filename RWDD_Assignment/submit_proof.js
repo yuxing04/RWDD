@@ -1,20 +1,23 @@
-document .getELementById('photo').addEventListner9('change', function(event) {
-    const file = event.target.files[0];
-    const preview = document.getElementById('photo-preview');
-    const uploadBox = document.querySelector('.upload-box');
+const photoInput = document.getElementById('photo');
+const preview = document.getElementById('preview');
+const uploadBox = document.getElementById('uploadBox');
 
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            preview.src = ew.target.result;
-            preview.style.display = 'block';
-            uploadBox.style.padding = "10px";
-            uploadBox.querySelector('.icon-circle').style.display = 'none';
-            uploadBox.querySelector('strong').textContent = "Change Photo";
-        }
-        reader.readAsDataURL(file);
-    } else {
-        preview.src = "";
-        preview.style.display = 'none';
-    }
-})
+photoInput.addEventListener('change', function () {
+
+    const file = this.files[0];
+
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+
+        // add class to change UI
+        uploadBox.classList.add('has-image');
+    };
+
+    reader.readAsDataURL(file);
+});
